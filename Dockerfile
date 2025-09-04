@@ -6,6 +6,9 @@ FROM python:3.13-alpine AS builder
 # Set working directory
 WORKDIR /app
 
+# Install build tools needed for compiling C/C++ Python extensions
+RUN apk add --no-cache g++ gcc musl-dev libffi-dev
+
 # Copy requirements first to leverage Docker cache
 COPY requirements.txt .
 
@@ -22,6 +25,7 @@ WORKDIR /app
 
 # Copy installed packages from builder
 COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Copy application code
 COPY . .
