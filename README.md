@@ -107,4 +107,9 @@ docker run -p 8080:8080 ai-blog-service
   * Extend the API endpoints to support multi-session tracking and more complex, stateful workflows.
 
 ## 📈 Flow of Graph
-![AI Blog Analysis Service Graph](ad_graph.png)
+![AI Blog Analysis Service Graph](images/ad_graph.png)
+
+## 📈 Screenshots of Endpoints in Action
+![Start of session for analyzing](images/analyze_start.png)
+![Session continue for analyzing](images/analyze_continue.png)
+![Searching for Topic/keyword](images/search.png)
