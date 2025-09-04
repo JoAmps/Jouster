@@ -1,6 +1,6 @@
 # AI Blog Analysis & Search Service
 
-This project is a lightweight **FastAPI** service built on **langgraph** designed for analyzing blog content and performing search operations. It leverages **Pydantic** for robust data validation and includes light weight unit tests with **pytest**. The service is designed for efficiency and easy deployment, with a lightweight **Alpine-based Docker image**. Its modular structure makes it easy to test and extend for future features like batch processing.
+This project is a lightweight **FastAPI** service built on **Langgraph** designed for analyzing blog content and performing search operations. It leverages **Pydantic** for robust data validation and includes light weight unit tests with **pytest**. The service is designed for efficiency and easy deployment, with a lightweight **Alpine-based Docker image**. Its modular structure makes it easy to test and extend for future features like batch processing.
 
 -----
 
@@ -83,7 +83,8 @@ docker run -p 8080:8080 ai-blog-service
   * **Pydantic:** Ensures type-safe, validated data throughout the entire application workflow.
   * **Async Operations:** The use of asynchronous database operations allows the application to handle multiple requests efficiently without blocking.
   * **GPT-4.1-mini:** Selected for its excellent balance of speed, low latency, and accuracy in generating structured results.
-  * **LangGraph:** Used as the LLM orchestration layer due to its low-level flexibility, enabling highly customized and extensible workflows.
+  * **LangGraph:** Used as the LLM orchestration layer due to its low-level flexibility, enabling highly customized and extensible workflows, even though the prototype is straightforward enough and doesnt include any conditional edges and a lot of logic.
+  * **PostgreSQL:** Used as the database to store all the analysis.
   * **Human-in-the-Loop:** LangGraph's Interrupt and Command features are integrated to support human intervention in the workflows.
   * **In-Memory Checkpointer:** This is used for session state in the prototype. **Note:** In a production environment, this should be replaced with a persistent solution like Redis or PostgreSQL to prevent state loss upon restart.
 
