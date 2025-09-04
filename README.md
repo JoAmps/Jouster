@@ -113,3 +113,4 @@ docker run -p 8080:8080 ai-blog-service
 ![Start of session for analyzing](images/analyze_start.png)
 ![Session continue for analyzing](images/analyze_continue.png)
 ![Searching for Topic/keyword](images/search.png)
+![Edge Case - Empty input](images/Edge_case - Empty_input.png)
